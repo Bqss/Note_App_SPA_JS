@@ -5,6 +5,7 @@ import { AuthServiceProvider } from '@base/infrastructure/services/auth/AuthServ
 import { LoginRequest } from '@base/api/requests/Auth/LoginRequest';
 import { HashService } from '@base/infrastructure/services/hash/HashService';
 import { InjectRepository } from '@base/decorators/InjectRepository';
+import { Op } from 'sequelize';
 
 @Service()
 export class AuthService {
@@ -17,7 +18,13 @@ export class AuthService {
 
   public async login(data: LoginRequest) {
     let user = await this.userRepository.repository.findOne({
-      where: { email: data.email },
+      where: { 
+     
+        [Op.or] : {
+          email: data.username ,
+          username: data.username
+        }
+      },
     }) as any;
 
     if (!user) {
@@ -32,8 +39,6 @@ export class AuthService {
       {
         userId: user.id,
         email: user.email,
-        role_id: user.role_id,
-        role: user.role.name,
       });
   }
 }

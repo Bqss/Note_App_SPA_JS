@@ -4,6 +4,8 @@ import * as jwt from 'jsonwebtoken';
 
 
 export class JWTProvider {
+
+
   public sign(payload: object, dataReturn: object) {
     return {
       ...dataReturn,
