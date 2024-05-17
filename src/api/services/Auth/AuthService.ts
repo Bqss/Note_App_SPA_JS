@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { UserRepository } from '@api/repositories/Users/UserRepository';
+import { UserRepository } from '@api/repositories/UserRepository';
 import { InvalidCredentials } from '@api/exceptions/Auth/InvalidCredentials';
 import { AuthServiceProvider } from '@base/infrastructure/services/auth/AuthServiceProvider';
 import { LoginRequest } from '@base/api/requests/Auth/LoginRequest';

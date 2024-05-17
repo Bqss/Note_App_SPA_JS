@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { UserRepository } from '@api/repositories/Users/UserRepository';
+import { UserRepository } from '@api/repositories/UserRepository';
 import { UserNotFoundException } from '@api/exceptions/Users/UserNotFoundException';
 import { EventDispatcher, EventDispatcherInterface } from '@base/decorators/EventDispatcher';
 import { InjectRepository } from '@base/decorators/InjectRepository';

@@ -1,4 +1,4 @@
-import { UserRepository } from "@base/api/repositories/Users/UserRepository";
+import { UserRepository } from "@api/repositories/UserRepository";
 import { InjectRepository } from "@base/decorators/InjectRepository";
 import { AuthServiceProvider } from "@base/infrastructure/services/auth/AuthServiceProvider";
 import { HashService } from "@base/infrastructure/services/hash/HashService";
