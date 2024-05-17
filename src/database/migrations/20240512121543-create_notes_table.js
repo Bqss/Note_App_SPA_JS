@@ -6,10 +6,18 @@ module.exports = {
     return await queryInterface.createTable('notes', {
       id: {
         type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        allowNull: false,
         primaryKey: true,
       },
       title: {
         type: Sequelize.STRING(255),
+        allowNull:false,
+      },
+      slug: {
+        type: Sequelize.STRING(255),
+        allowNull: false,
+        unique: true,
       },
       content: {
         type: Sequelize.TEXT,
